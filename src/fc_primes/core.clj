@@ -22,8 +22,7 @@
         (if (= i times)
           primes
           (recur (inc i)
-                 (if (or (> 6 times)
-                         (<= new-prime (Math/sqrt upper-bound)))
+                 (if (<= new-prime (Math/sqrt upper-bound))
                    (filter #(not= 0 (mod % new-prime)) nums)
                    nums)
                  primes))))))
