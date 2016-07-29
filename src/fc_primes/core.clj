@@ -12,7 +12,8 @@
                (Math/log (Math/log n)))))))
 
 (defn sieve
-  "Generate `times` prime numbers in O(sqrt(n)log(n)) time."
+  "Generate `times` prime numbers in O(sqrt(log(n)) * log(n)) time,
+  which might reduce to a prettier expression--who knows?."
   [times]
   (let [upper-bound (nth-prime-upper-bound times)]
     (loop [i 1
